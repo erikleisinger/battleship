@@ -2,6 +2,25 @@ const gameTiles = {
 
 };
 
+const gameAssets = {
+  colors: {
+    target: 'red',
+    void: 'white',
+    tried: 'black',
+    carrier: 'red',
+    battleship: 'orange',
+    cruiser: 'yellow',
+    submarine: 'green',
+    destroyer: 'blue'
+  },
+    shipData: {
+      carrier: 5,
+      battleship: 4,
+      cruiser: 3,
+      submarine: 3,
+      destroyer: 2
+    }
+};
 const gameData = {
   state: 'void',
   gameMode: 'place',
@@ -18,6 +37,35 @@ const gameData = {
 };
 
 
+const boatPlacement = function() {
+  let currentArray = gameData.placement.currentSpot;
+  for (let item of currentArray) {
+    console.log(item);
+    let tile = document.getElementById(item);
+    console.log(tile);
+    tile.style.backgroundColor = gameAssets.colors[gameData.checkFor];
+    gameTiles[item].role = 'target';
+  }
+  let shipClass = gameData.checkFor;
+  gameData.checkFor = 'void';
+  gameData.placement[shipClass] = currentArray;
+  
+}
+
+const move = function (id) {
+  if (gameData.gameMode === 'place') {
+    boatPlacement()
+  } else if (gameData.gameMode === 'play') {
+    let data = gameTiles[id];
+    let tile = document.getElementById(id);
+    console.log(gameData.state);
+    let newColor = gameAssets.colors[gameData.state];
+    tile.style.backgroundColor = newColor;
+  }
+};
+
+
+
 const createGrid = function () {
   {
     let board = document.getElementsByClassName("board")[0];
@@ -27,6 +75,15 @@ const createGrid = function () {
       let containerBlock = board
       containerBlock.appendChild(blockToInsert);
       blockToInsert.id = j;
+      blockToInsert.addEventListener('click', function () {
+        move(this.id);
+      });
+      blockToInsert.addEventListener('mouseover', function () {
+        hover(this.id);
+      });
+      blockToInsert.addEventListener('mouseout', function () {
+        unHover();
+      });
     }
 
   }
@@ -38,6 +95,9 @@ const createGrid = function () {
       let containerBlock = board
       containerBlock.appendChild(blockToInsert);
       blockToInsert.id = j;
+      blockToInsert.addEventListener('click', function () {
+        move(this.id);
+      });
     }
 
   }
@@ -67,7 +127,6 @@ const shipPlacementButton = function (cla) {
     gameData.checkFor = cla;
   }
 };
-
 
 const setButtons = function () {
   let targButton = document.getElementsByClassName('target')[0];
@@ -134,6 +193,8 @@ const setButtons = function () {
 };
 setButtons();
 
+
+
 const checkBounds = function (idee) {
   return new Promise((resolve, reject) => {
     let id = Number(idee);
@@ -196,6 +257,7 @@ const highlightTiles = function(array) {
   }
 };
 
+
 const hover = function (id) {
   if (gameData.gameMode === 'place') {
     checkBounds(id).then((arrayOfTiles) => {
@@ -209,4 +271,25 @@ const hover = function (id) {
   } else if (gameData.gameMode === 'play') {
   }
 };
+
+const highlightNoMore = function() {
+  let array = currentArray;
+  for (let item of array) {
+    if (gameTiles[item].role === 'target') {
+    } else {
+      let tileToHighlight = document.getElementById(item);
+      tileToHighlight.style.backgroundColor = 'white';
+    }
+    
+  }
+};
+
+const unHover = function (id) {
+  if (gameData.gameMode === 'place') {
+    highlightNoMore()
+  };
+}
+
+
+
 
