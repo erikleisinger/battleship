@@ -29,3 +29,11 @@ const createGrid = function () {
 }
 createGrid();
 
+const generateGameTiles = function () {
+  for (let x = 0; x < 200; x++) {
+    gameTiles[x] = { asset: 'red', role: 'void', };
+  }
+  console.log(gameTiles);
+};
+generateGameTiles();
+
