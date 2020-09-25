@@ -23,22 +23,27 @@ const unHover = function (id) {
 // const { gameTiles, gameData, gameAssets } = require('./data');
 
 const boatPlacement = function (id) {
-    let currentArray = gameData.placement.currentSpot;
-    for (let item of currentArray) {
-      if (gameTiles[item].role === 'target') {
-        console.log(`occupied`);
-        return;
-      }
+  let currentArray = gameData.placement.currentSpot;
+  for (let item of currentArray) {
+    if (gameTiles[item].role === 'target') {
+      console.log(`occupied`);
+      return;
     }
-    for (let item of currentArray) {
-      let tile = document.getElementById(item);
-      tile.style.backgroundColor = gameAssets.colors[gameData.checkFor];
-      gameTiles[item].role = 'target';
-    }  
+  }
+  for (let item of currentArray) {
+    let tile = document.getElementById(item);
+    tile.style.backgroundColor = gameAssets.colors[gameData.checkFor];
+    gameTiles[item].role = 'target';
     let shipClass = gameData.checkFor;
-    gameData.checkFor = 'void';
-    gameData.placement[shipClass] = currentArray;
-  };
+    gameTiles.ship = shipClass;
+    playGameInfo.player[item] = {asset: 'red', role: 'void'};
+    playGameInfo.player[item].ship = shipClass;
+    console.log(playGameInfo.player)
+  }
+  let shipClass = gameData.checkFor;
+  gameData.checkFor = 'void';
+  gameData.placement[shipClass] = currentArray;
+};
 
 const move = function (id) {
   if (gameData.gameMode === 'place') {
@@ -62,6 +67,8 @@ const shipPlacementButton = function (cla) {
       let tile = document.getElementById(item);
       tile.style.backgroundColor = 'white';
       gameTiles[item].role = 'void';
+      gameTiles.ship = 'void';
+      playGameInfo.player[item].ship = '';
     }
     gameData.checkFor = cla;
   } else {
@@ -152,59 +159,74 @@ const highlightNoMore = function () {
 };
 
 const getBounds = function (tile) {
-  
+
 };
-console.log(`getBounds output: ${getBounds(1)}`);
 
-
+const playGameBoard = function() {
+  for (let item in gameTiles) {
+    if (gameTiles[item].role === 'target') {
+    };
+  };
+  for (let item in playGameInfo.opponent) {
+    gameTiles[item].role = 'target';
+    let ship = playGameInfo.opponent[item].ship;
+    
+    let color = gameAssets.colors[ship];
+    console.log(color);
+    let tile = document.getElementById(item);
+    tile.style.backgroundColor = color;
+  }
+  console.log(playGameInfo);
+};
 
 const createGrid = function () {
-  {
-    let board = document.getElementsByClassName("board")[0];
-    console.log('a');
-    for (var j = 0; j < 100; j++) {
-      let blockToInsert = document.createElement('div');
-      let containerBlock = board
-      containerBlock.appendChild(blockToInsert);
-      blockToInsert.id = j;
-      blockToInsert.addEventListener('click', function () {
-        move(this.id);
-      });
-      blockToInsert.addEventListener('mouseover', function () {
-        hover(this.id);
-      });
-      blockToInsert.addEventListener('mouseout', function () {
-        unHover();
-      });
-    }
-
+  let board = document.getElementById("boardPlayer");
+  console.log('a');
+  for (let j = 0; j < 100; j++) {
+    let blockToInsert = document.createElement('div');
+    let containerBlock = board
+    containerBlock.appendChild(blockToInsert);
+    blockToInsert.id = j;
+    blockToInsert.addEventListener('click', function () {
+      move(this.id);
+    });
+    blockToInsert.addEventListener('mouseover', function () {
+      hover(this.id);
+    });
+    blockToInsert.addEventListener('mouseout', function () {
+      unHover();
+    });
   }
-  {
-    let board = document.getElementsByClassName("board")[1];
-    console.log('a');
-    for (var j = 100; j < 200; j++) {
-      let blockToInsert = document.createElement('div');
-      let containerBlock = board
-      containerBlock.appendChild(blockToInsert);
-      blockToInsert.id = j;
-      blockToInsert.addEventListener('click', function () {
-        move(this.id);
-      });
-    }
-
+  let boardOpp = document.getElementById("boardOpp");
+  for (let j = 100; j < 200; j++) {
+    let blockToInsert = document.createElement('div');
+    let containerBlock = boardOpp
+    containerBlock.appendChild(blockToInsert);
+    blockToInsert.id = j;
+    blockToInsert.addEventListener('click', function () {
+      move(this.id);
+    });
+    blockToInsert.addEventListener('mouseover', function () {
+      hover(this.id);
+    });
+    blockToInsert.addEventListener('mouseout', function () {
+      unHover();
+    });
   }
+
 }
 createGrid();
 
 const generateGameTiles = function () {
   for (let x = 0; x < 200; x++) {
-    gameTiles[x] = { asset: 'red', role: 'void', };
+    gameTiles[x] = { asset: 'red', role: 'void', ship: 'void' };
+  }
+  for (let x = 0; x < 200; x++) {
+    gameTiles[x] = { asset: 'red', role: 'void', ship: 'void' };
   }
   console.log(gameTiles);
 };
 generateGameTiles();
-
-
 
 const setButtons = function () {
   let targButton = document.getElementsByClassName('target')[0];
@@ -266,6 +288,10 @@ const setButtons = function () {
   placeButton.addEventListener('click', function () {
     gameData.gameMode = 'place';
     console.log(gameData);
+  });
+  let testButton = document.getElementsByClassName('bigTestButton')[0];
+  testButton.addEventListener('click', function () {
+    playGameBoard();
   });
 
 };
