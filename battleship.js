@@ -257,7 +257,6 @@ const highlightTiles = function(array) {
   }
 };
 
-
 const hover = function (id) {
   if (gameData.gameMode === 'place') {
     checkBounds(id).then((arrayOfTiles) => {
