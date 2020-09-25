@@ -1,0 +1,29 @@
+
+.window {
+  margin: 0 auto;
+  width: 1600px;
+  height: 850px;
+  background-color: yellow;
+  display: flex;
+  flex-wrap: wrap;
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  height: 800px;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: red;
+}
+.board > div {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 2px solid yellow;
+  height: 75px;
+  width: 75px;
+}
+.buttons {
+  width: 1600px;
+}
