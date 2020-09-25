@@ -52,9 +52,6 @@ const move = function (id) {
   }
 };
 
-
-
-
 const shipPlacementButton = function (cla) {
   console.log('hi there');
   console.log(gameData.placement[cla]);
@@ -64,6 +61,7 @@ const shipPlacementButton = function (cla) {
     for (let item of tileArray) {
       let tile = document.getElementById(item);
       tile.style.backgroundColor = 'white';
+      gameTiles[item].role = 'void';
     }
     gameData.checkFor = cla;
   } else {
@@ -262,7 +260,7 @@ const setButtons = function () {
   let playButton = document.getElementsByClassName('play')[0];
   playButton.addEventListener('click', function () {
     gameData.gameMode = 'play';
-    console.log(gameData);
+    console.log(gameTiles);
   });
   let placeButton = document.getElementsByClassName('place')[0];
   placeButton.addEventListener('click', function () {
