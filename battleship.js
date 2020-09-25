@@ -2,6 +2,21 @@ const gameTiles = {
 
 };
 
+const gameData = {
+  state: 'void',
+  gameMode: 'place',
+  checkFor: 'battleship',
+  placement: {
+    axis: 'horz',
+    currentSpot: [],
+    carrier: 'n',
+    battleship: 'n',
+    cruiser: 'n',
+    submarine: 'n',
+    destroyer: 'n'
+}
+};
+
 
 const createGrid = function () {
   {
@@ -36,6 +51,23 @@ const generateGameTiles = function () {
   console.log(gameTiles);
 };
 generateGameTiles();
+
+const shipPlacementButton = function (cla) {
+  console.log('hi there');
+  console.log(gameData.placement[cla]);
+  if (gameData.placement[cla] !== 'n') {
+    
+    let tileArray = gameData.placement[cla];
+    for (let item of tileArray) {
+      let tile = document.getElementById(item);
+      tile.style.backgroundColor = 'white';
+    }
+    gameData.checkFor = cla;
+  } else {
+    gameData.checkFor = cla;
+  }
+};
+
 
 const setButtons = function () {
   let targButton = document.getElementsByClassName('target')[0];
