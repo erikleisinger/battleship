@@ -1,3 +1,15 @@
+const addClasses = function () {
+  classes.grawl = grawl;
+  classes.virginia = virginia;
+};
+addClasses();
+
+let pic = document.getElementsByClassName('character')[0];
+pic.addEventListener('click', function() {
+  let character = classes[gameData.opponentCharacter];
+  console.log(character.getPhrase('hit'));
+});
+
 const generateGameTiles = function () {
   for (let x = 0; x < 200; x++) {
     gameTiles[x] = { asset: 'red', role: 'void', ship: 'void' };

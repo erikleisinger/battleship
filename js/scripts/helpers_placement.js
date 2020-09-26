@@ -18,9 +18,7 @@ const unHover = function (id) {
   if (gameData.gameMode === 'place') {
     highlightNoMore()
   };
-}
-
-// const { gameTiles, gameData, gameAssets } = require('./data');
+};
 
 const boatPlacement = function (id) {
   let currentArray = gameData.placement.currentSpot;

@@ -1,8 +1,9 @@
+const classes = {
+};
+
+
 const opponentTiles = {
 
-};
-const userCharacters = {
-  player: 'grawl',
 };
 
 const playGameInfo = {
@@ -59,7 +60,9 @@ const gameData = {
     cruiser: 'n',
     submarine: 'n',
     destroyer: 'n'
-  }
+  },
+  playerCharacter: 'brahms',
+  opponentCharacter: 'grawl',
 };
 
 

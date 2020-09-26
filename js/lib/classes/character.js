@@ -4,7 +4,8 @@ class Character {
     this.phrases = {
       hit: [`wow`]
     };
-    this.attribute = 'holy';
+    this.images = {
+    };
   }
     getPhrase(event) {
     let library = this.phrases[event];
