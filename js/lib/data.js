@@ -1,6 +1,3 @@
-
-
-
 const opponentTiles = {
 
 };
@@ -70,46 +67,3 @@ const gameData = {
 const gameTiles = {
 
 };
-
-class Character {
-
-  constructor() {
-    this.phrases = {
-      hit: [`wow`]
-    };
-    this.attribute = 'holy';
-  }
-  getPhrase(event) {
-    let library = this.phrases[event];
-    let length = library.length;
-    let randomNumber = Math.floor(Math.random() * length);
-    return this.phrases[event][randomNumber];
-  }
-};
-
-
-
-
-class Grawl extends Character {
-
-  constructor() { 
-    super()
-    this.phrases = {
-      hit: [
-        `Fantastic. There is nothing better than a cabbage soup`,
-        `You hit their ${gameData.checkFor}. Why? Is the rustling of the fields and birdsong not enough for you? Will you ever find rest?`
-      ]
-    }
-  }
-};
-
-const char = new Character();
-
-const grawl = new Grawl();
-console.log(grawl.getPhrase('hit'));
-
-// module.exports = {
-//   gameAssets,
-//   gameData,
-//   gameTiles
-// };

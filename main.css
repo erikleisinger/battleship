@@ -1,5 +1,5 @@
 body {
-  background-image: url('ship.jpg');
+  background-image: url('js/lib/images/ship.jpg');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
@@ -60,7 +60,7 @@ body {
   background-color:rgba(0, 0, 0, 0.6);
 }
 .character {
-  background-image: url('farmer.jpg');
+  background-image: url('js/lib/images/farmer.jpg');
   background-size: cover;
   border-bottom-left-radius: 10%
   0 1px 1px rgba(0,0,0,0.15); 
@@ -70,7 +70,7 @@ body {
   height: 50%;
 }
 .characterLeft {
-  background-image: url('robertBobCecil.jpg');
+  background-image: url('js/lib/images/robertBobCecil.jpg');
   background-size: cover;
   0 1px 1px rgba(0,0,0,0.15); 
   0 2px 2px rgba(0,0,0,0.15);
