@@ -43,14 +43,18 @@ $(document).ready(() => {
     setTimeout(() => {
       $('#query').fadeTo(100, 0);
     }, 1000)
+   
+    setTimeout(() => {
+      let name = gameData.playerName;
+      $('#query').text(`Nice to meet you, ${name}`);
+      $('#query').fadeTo(100, 1);
+    }, 1400)
     setTimeout(() => {
       $('.queryBox').fadeTo(100, 0);
 
-    }, 2000)
+    }, 3000)
     setTimeout(() => {
       $('.queryBox').css({display: 'none'});
-    }, 2500)
-    
-    
+    }, 3500)
   })
 });

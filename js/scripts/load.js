@@ -4,6 +4,23 @@ const addClasses = function () {
 };
 addClasses();
 
+const configureClassPicker = function () {
+  let array = document.getElementsByClassName('character');
+  for (let item of array) {
+    console.log(item);
+    item.addEventListener('mouseover', () => {
+      let child =  item.childNodes[3].style.display = "block";
+      child.addEventListener('mouseover', () => {
+        this.style.display = 'block';
+      })
+    })
+    item.addEventListener('mouseout', () => {
+     item.childNodes[3].style.display = "none";
+    })
+  }
+};
+configureClassPicker();
+
 let pic = document.getElementsByClassName('character')[0];
 pic.addEventListener('click', function() {
   let character = classes[gameData.opponentCharacter];
