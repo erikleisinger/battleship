@@ -61,7 +61,8 @@ const gameData = {
     submarine: 'n',
     destroyer: 'n'
   },
-  playerCharacter: 'brahms',
+  playerName: '';
+  playerCharacter: 'virginia',
   opponentCharacter: 'grawl',
 };
 

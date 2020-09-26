@@ -2,12 +2,22 @@
 
 <head>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="intro.css">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>battleships</title>
 
 </head>
 
 <body>
+  <div class="greeting">Hi there.</div>
+  <div class="greeting" id="lowerGreeting"></div>
+  <div class="intro">
+    <div class="queryBox">
+      <div id="query"></div>
+      <input type="text" placeholder="Type something..." id="myInput">
+    <button type="button" id="myButton" onclick="getInputValue();">Go</button>
+    </div>
+  </div>
   <div class="window">
     <div class="userCharacter">
       <div class="characterLeft"></div>
@@ -125,7 +135,10 @@
 <script src="js/lib/classes/character.js"></script>
 <script src="js/lib/classes/classes.js"></script>
 <script src="js/scripts/helpers_placement.js"></script>
+<script src="js/lib/jquery.js"></script>
+<script src="js/scripts/load_intro.js"></script>
 <script src="js/scripts/load.js"></script>
+
 
 
 
