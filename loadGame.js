@@ -45,14 +45,25 @@ const boatPlacement = function (id) {
   gameData.placement[shipClass] = currentArray;
 };
 
+const sendMessage = function(event) {
+  
+  
+  
+  let containerBlock = document.getElementById('dialogue');
+  containerBlock.innerHTML = grawl.getPhrase(event);
+}
+
+
 const move = function (id) {
-  console.log(grawl.getPhrase('hit'));
+  
   if (gameData.gameMode === 'place') {
     boatPlacement(id);
   } else if (gameData.gameMode === 'play') {
     let data = gameTiles[id];
     let tile = document.getElementById(id);
     console.log(gameData.state);
+    let e = 'hit'
+    sendMessage(e);
     let newColor = gameAssets.colors[gameData.state];
     tile.style.backgroundColor = newColor;
   }

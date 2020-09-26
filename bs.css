@@ -78,7 +78,35 @@ body {
   0 8px 8px rgba(0,0,0,0.15);
   height: 50%;
 }
-
+.chatwindow {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#dialogue {
+  max-height: 60%;
+  max-width: 70%;
+  font-size: 3vh;
+  text-align: right;
+}
+#playerwindow {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  border-radius: 60%;
+  border-bottom-left-radius: 0px;
+  margin-left: 2%;
+  
+}
+#opponentwindow {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  border-radius: 60%;
+  margin-right: 2%;
+  border-bottom-right-radius: 0px;
+  
+}
 
 .characterPad {
   height: 50%;
@@ -87,6 +115,9 @@ body {
   height: 25%;
   width: 70%;
   background-color:rgba(0, 0, 0, .6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .buttons {
