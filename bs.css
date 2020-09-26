@@ -1,29 +1,157 @@
-
+body {
+  background-image: url('ship.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
 .window {
   margin: 0 auto;
-  width: 1600px;
-  height: 850px;
-  background-color: yellow;
+  width: 99vw;
+  height: 99vh;
+  
   display: flex;
+  
+  
+  position: relative;
   flex-wrap: wrap;
+  flex-direction: column;
+ 
+
+}
+.gameWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+ flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 70%;
+  height: 75%;
+ 
+
+  background-color:rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
 }
 .board {
   display: flex;
-  flex-wrap: wrap;
-  height: 800px;
-  width: 800px;
-  margin: 0 auto;
   padding: 0;
-  background-color: red;
+  margin: 0;
+  height: 90%;
+  width:  90%;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  background-color: pink;
+ 
 }
 .board > div {
-  margin: 0;
   padding: 0;
   background-color: white;
-  border: 2px solid yellow;
-  height: 75px;
-  width: 75px;
+  border: 2px solid brown;
+  height: 9%;
+  width: 9%;
+  flex: 1 0 auto;
 }
+
+.userCharacter {
+  width: 15%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.6);
+}
+.character {
+  background-image: url('farmer.jpg');
+  background-size: cover;
+  border-bottom-left-radius: 10%
+  0 1px 1px rgba(0,0,0,0.15); 
+  0 2px 2px rgba(0,0,0,0.15);
+  0 4px 4px rgba(0,0,0,0.15); 
+  0 8px 8px rgba(0,0,0,0.15);
+  height: 50%;
+}
+.characterLeft {
+  background-image: url('robertBobCecil.jpg');
+  background-size: cover;
+  0 1px 1px rgba(0,0,0,0.15); 
+  0 2px 2px rgba(0,0,0,0.15);
+  0 4px 4px rgba(0,0,0,0.15); 
+  0 8px 8px rgba(0,0,0,0.15);
+  height: 50%;
+}
+
+
+.characterPad {
+  height: 50%;
+}
+.chat {
+  height: 25%;
+  width: 70%;
+  background-color:rgba(0, 0, 0, .6);
+}
+
 .buttons {
-  width: 1600px;
+  width: 15%;
+  height: 80%;
+  
+  text-align: center;
+  
+}
+.buttons > button {
+  width: 80%;
+  height: 45px;
+  background-color: rgba(0, 0, 0, .4);
+  color: white;
+  font-size: 2vh;
+  font-family: sans-serif;
+  border-radius: 5px;
+}
+.buttons >button:hover {
+  background-color: rgba(0, 0, 0, .2);
+ }
+
+ .boardAndMarkersContainer {
+   background-color: red;
+   display: flex;
+   height: 70%;
+   width: 40%;
+   flex-wrap: wrap;
+   flex-direction: column-reverse;
+ }
+.markersVert {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  background-color: yellow;
+  width: 10%;
+  
+  
+}
+.markersVert > div {
+  padding-top: 40%;
+  height: 10%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2vh;
+}
+#padding {
+  height: 2%;
+}
+.markersHorz {
+  height: 10%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.markersHorz > div{
+  width: 10%;
+  margin: 2px;
+  text-align: center;
+  line-height: 8vh;
+  font-family: sans-serif;
+  font-size: 2vh;
+}
+.divider {
+  height: 70%;
+  width: 2%;
 }

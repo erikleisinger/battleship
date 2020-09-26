@@ -46,6 +46,7 @@ const boatPlacement = function (id) {
 };
 
 const move = function (id) {
+  console.log(grawl.getPhrase('hit'));
   if (gameData.gameMode === 'place') {
     boatPlacement(id);
   } else if (gameData.gameMode === 'play') {
