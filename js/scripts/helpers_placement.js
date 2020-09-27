@@ -51,7 +51,6 @@ const boatPlacement = function (id) {
     gameTiles.ship = shipClass;
     playGameInfo.player[item] = { asset: 'red', role: 'void' };
     playGameInfo.player[item].ship = shipClass;
-    console.log(playGameInfo.player)
   }
   let shipClass = gameData.checkFor;
   gameData.lastShip = shipClass;
@@ -66,7 +65,6 @@ const sendPlayerGreeting = function () {
   let containerBlock = document.getElementById('playerDialogue');
   let playerCharacter = gameData.playerCharacter;
   let playerGreeting = classes[playerCharacter].phrases.greeting;
-  console.log(playerGreeting);
   containerBlock.innerHTML = playerGreeting;
 
 
@@ -75,7 +73,6 @@ const sendOpponentGreeting = function () {
   let containerBlock = document.getElementById('opponentDialogue');
   let opponentCharacter = gameData.opponentCharacter;
   let opponentGreeting = classes[opponentCharacter].phrases.greeting;
-  console.log(opponentGreeting);
   containerBlock.innerHTML = opponentGreeting;
 
 
@@ -84,8 +81,6 @@ const sendOpponentGreeting = function () {
 
 
 const shipPlacementButton = function (cla) {
-  console.log('hi there');
-  console.log(gameData.placement[cla]);
   if (gameData.placement[cla] !== 'n') {
 
     let tileArray = gameData.placement[cla];
@@ -117,7 +112,6 @@ const checkBounds = function (idee) {
       for (let x = id; x < id + length; x++) {
 
         if ((x - 9) % 10 === 0 && x !== id + (length - 1)) {
-          console.log('array is out of bounds')
           resolve(false);
         }
       }
@@ -132,9 +126,9 @@ const checkBounds = function (idee) {
             resolve(false);
           }
           if (x === (id + length *10)) {
-            console.log('ALERT: THIS IS THE TILE:', x)
+           
             if (x !== (id + length * 10)) {
-              console.log('array is out of bounds')
+             
               resolve(false);
             }
           }
@@ -145,9 +139,9 @@ const checkBounds = function (idee) {
             resolve(false);
           }
           if (x === (id + length *10)) {
-            console.log('ALERT: THIS IS THE TILE:', x)
+            
             if (x !== (id + length * 10)) {
-              console.log('array is out of bounds')
+      
               resolve(false);
             }
           }
@@ -166,10 +160,10 @@ const checkBounds = function (idee) {
 };
 
 const checkArray = function (array) {
-  console.log(`checkArray: ${array}`)
+
   return new Promise((resolve, reject) => {
     for (let item of array) {
-      console.log(gameTiles[item].role);
+    
       if (gameTiles[item].role === 'target') {
         resolve(false);
       }
@@ -222,7 +216,17 @@ const playGameBoard = function () {
     // let tile = document.getElementById(item);
     // tile.style.backgroundColor = color;
   }
-  console.log(playGameInfo);
+  let num = Math.floor(Math.random() * 4);
+  console.log(num);
+    if (num === 0) {
+      gameData.opponentCharacter = classes.grawl;
+    }
+    if (num === 1) {
+      gameData.opponentCharacter = classes.kamala;
+    }
+    if (num === 2) {
+      gameData.opponentCharacter = classes.virginia;
+    }
 };
 
 

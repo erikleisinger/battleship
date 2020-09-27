@@ -6,25 +6,53 @@ const move = function (id) {
   }
 };
 
-
-const changeTileAsset = function (tile) {
-  let tileRole = gameTiles[tile].role;
-  if (tileRole === 'target') {
+const checkPlayTile = function (tile) {
+  if (tile > 99) {
+    return (tile in playGameInfo.opponent);
+  } else {
+    return (tile in playGameInfo.player)
   }
-  let color = gameAssets.colors[tileRole];
-  let changeTile = document.getElementById(tile);
-  changeTile.style.backgroundColor = color;
+};
+
+const changeTileAsset = function (tile, bool) {
+  if (bool === true) {
+    if (tile > 99) {
+      let shipClass = playGameInfo.opponent[tile].ship;
+      let color = gameAssets.colors[shipClass];
+      document.getElementById(tile).style.backgroundColor = color;
+    }
+    if (tile < 99) {
+      let shipClass = playGameInfo.player[tile].ship;
+      let color = gameAssets.colors[shipClass];
+      document.getElementById(tile).style.backgroundColor = color;
+    }
+  } else {
+    let changeTile = document.getElementById(tile);
+    changeTile.style.backgroundColor = 'black';
+  }
+  
 
 }
 
 const fireAtTile = function (tile, player) {
-  if (checkTile(tile) === true) {
-    changeTileAsset(tile);
-    sendMessage(player, 'hit');
-
+  if (checkPlayTile(tile) === true) {
+    
+    setTimeout(() => {
+      sendMessage('player', 'hit');
+    }, 1000)
+    setTimeout(() => {
+      changeTileAsset(tile, true);
+    }, 1500);
+    
   } else {
+    setTimeout(() => {
+      sendMessage('player', 'tried');
+    }, 1000)
+    setTimeout(() => {
+      changeTileAsset(tile, null);
+    }, 1500);
     gameTiles[tile].role = 'tried';
-    changeTileAsset(tile);
-    sendMessage(player, 'tried');
+    
+    
   }
 };

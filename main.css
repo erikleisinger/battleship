@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
+  font-family: sans-serif;
 }
 .window {
   margin: 0 auto;
@@ -188,4 +189,8 @@ justify-content: center;
 .divider {
   height: 70%;
   width: 2%;
+}
+.desc {
+  font-size: 2vh;
+  padding: 1vh;
 }

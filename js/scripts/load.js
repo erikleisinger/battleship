@@ -11,7 +11,7 @@ const configureClassPicker = function () {
   let array = document.getElementsByClassName('characterPick');
   for (let item of array) {
     item.addEventListener('mouseover', () => {
-      let child =  item.childNodes[3].style.display = "block";
+      let child =  item.childNodes[3].style.display = "flex";
       child.addEventListener('mouseover', () => {
         this.style.display = 'block';
       })
@@ -22,6 +22,29 @@ const configureClassPicker = function () {
   }
 };
 configureClassPicker();
+
+const pickRandomOpponent = function () {
+  let num = Math.floor(Math.random() * 5);
+  console.log(num);
+    if (num === 0) {
+      gameData.opponentCharacter = 'grawl';
+    }
+    if (num === 1) {
+      gameData.opponentCharacter = 'kamala';
+    }
+    if (num === 2) {
+      gameData.opponentCharacter = 'virginia';
+    }
+    if (num === 3) {
+      gameData.opponentCharacter = 'sadhguru';
+    }
+    if (num === 4) {
+      gameData.opponentCharacter = 'corey';
+    }
+    if (gameData.opponentCharacter === gameData.playerCharacter) {
+      pickRandomOpponent();
+    }
+}
 
 const endCharSelect = function () {
   document.getElementsByClassName('pickYourClass')[0].style.display = 'none';
@@ -42,48 +65,43 @@ const setCharPictures = function () {
   oppFrame.style.backgroundImage =  `url(${oppPic})`;
 };
 
+const chooseCharacter = function(choice) {
+  gameData.playerCharacter = choice;
+  console.log(`chosen character: ${gameData.playerCharacter}`)
+  let window = document.getElementsByClassName('intro')[0];
+  window.style.display = 'none';
+  pickRandomOpponent();
+   endCharSelect();
+    setCharPictures();
+    gameData.gameMode = 'place';
+    loadPlacement();
+
+}
+
 const characterSelectButtons = function () {
   let virginia = document.getElementById('virginiaSelect');
   virginia.addEventListener('click', () => {
-    gameData.playerCharacter = "virginia";
+    chooseCharacter('virginia');
+    
   });
   let sadhguru = document.getElementById('sadhguruSelect');
   sadhguru.addEventListener('click', () => {
-    gameData.playerCharacter = "sadhguru";
+    chooseCharacter('sadhguru');
+    
   });
   let grawl = document.getElementById('grawlSelect');
   grawl.addEventListener('click', () => {
-    gameData.playerCharacter = "grawl";
+    chooseCharacter('grawl');
+    
   });
   let kamala = document.getElementById('kamalaSelect');
   kamala.addEventListener('click', () => {
-    gameData.playerCharacter = "kamala";
+    chooseCharacter('kamala');
+   
   });
   let corey = document.getElementById('coreySelect');
   corey.addEventListener('click', () => {
-    gameData.playerCharacter = "corey";
-  });
-  let charConf = document.getElementById('charConf');
-  charConf.addEventListener('click', () => {
-    endCharSelect();
-    setCharPictures();
-    gameData.gameMode = 'place';
-    charConf.style.display = 'none';
-    setTimeout(() => {
-      sendPlayerGreeting();
-    }, 1000);
-    setTimeout(() => {
-      sendOpponentGreeting();
-    }, 4000);
-    setTimeout(() => {
-      clearMessage('player');
-    }, 5000);
-    setTimeout(() => {
-      clearMessage('opponent');
-    }, 6000);
-    setTimeout(() => {
-      sendMessage('place', 'player');
-    }, 8000);
+    chooseCharacter('corey');
   });
 
 };

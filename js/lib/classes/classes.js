@@ -40,7 +40,13 @@ class Virginia extends Character {
         `Hit. You hit the ${gameData.checkFor}.`
       ],
       tried: [
-        `Not quite on the mark.`
+        `Not quite on the mark.`,
+        `Suddenly, staring down at them, Virginia couldn't help but feel a sudden horror, a sudden jolt of consciousness that only reinforced what she already knew: it was a miss.`,
+        `She could only watch as the game slipped through her fingers.`,
+        `Oh! Enough of these failures. How I long to be in the city`,
+        `Have you almost lost? Olivia will soon be over for afternoon tea.`,
+        `Hmm...? Oh, another miss. Don't bother me.`,
+        `If you keep it up like this, you'll soon be dead.`
       ]
     };
   }
@@ -66,7 +72,7 @@ class Sadhguru extends Character {
     this.phrases = {
       greeting: `What a silly little game. Ha ha! Quite human of us. Isn't it?`,
       hit: [
-        `What a lark! What a plunge! `,
+        `What a lark! What a plunge!`,
         `Hit. You hit the ${gameData.checkFor}.`
       ]
     };

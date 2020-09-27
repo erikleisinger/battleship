@@ -1,28 +1,8 @@
-.greeting {
-  height: 50vh;
-  width: 30vw;
-  white-space: normal;
-  position: absolute;
-  /* z-index: 1000; */
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto;
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 10vh;
-  font-family: sans-serif;
-  text-align: center;
-  opacity: 0;
-}
-
 .intro {
   position: absolute;
   display: block;
-  height: 80vh;
-  width: 80vw;
+  height: 10vh;
+  width: 10vh;
   background-color: white;
   left: 0; 
   right: 0; 
@@ -32,38 +12,37 @@
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
-  z-index: 200;
+  z-index: 1;
   border-radius: 20px;
-}
-.queryBox {
-  display: none;
-  height: 60%;
-  width: 70%;
-  border: 4px solid blue;
-  margin: 0 auto;
-  margin-top: 10%;
-  border-radius: 10px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 8vh;
-  z-index: 1900;
 
 }
-#myInput {
-  height: 30px;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0);
-  border-style: groove;
-  z-index: 2000;
+.systemText {
+  position: absolute;
+  display: none;
+  /* bottom: 8%; */
+  width: 40vw;
+  bottom: 8%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1000;
+  opacity: 0;
+  font-size: 6vh;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .pickYourClass {
-  position: absolute;
+  display: none;
   height: 80vh;
-  width: 80vw;
+  width: 5vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  align-content: flex-end;
+  margin: 0 auto;
 }
 .characterPick {
   height: 90%;
@@ -71,15 +50,16 @@
   min-width: 0%;
   border: 2px solid black;
   transition: border-color, transform, 0.3s;
-  display: flex;
+  display: none;
   background-color: none;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .characterPick:hover {
  border-color: yellow;
  transform: scale(1.1);
- width: 100%;
- z-index: 3000;
+ width: 70%;
+ z-index: 10000;
+
 
 }
 .nameWrapper {
@@ -91,9 +71,10 @@
   margin-left: auto;
   text-align: left;
   padding-top: 4vh;
-  font-size: 5vh;
+  font-size: 1vh;
   font-family: sans-serif;
   word-break: normal;
+  z-index: 2000;
 }
 
 .charLeft {
@@ -139,6 +120,32 @@
   max-width: 60%;
   min-width: 0%;
   overflow: hidden;
+  flex-direction: column;
   
 }
+.charTitle {
+  height: 5vh;
+  font-size: 4vh;
+  padding-left: 1vw;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.titlePad {
+  height: 15%;
+}
+.desc {
+  height: 70%;
+}
 
+.selectChar {
+  height: 10vh;
+  margin-bottom: 2vh;
+  font-size: 3vh;
+  transition: all 0.3s;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.selectChar:hover {
+  transform: scale(1.1);
+  border: 2px solid yellow;
+}

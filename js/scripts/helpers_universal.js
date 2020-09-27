@@ -1,4 +1,5 @@
 const sendMessage = function (player, event) {
+
   clearMessage(player);
 
   let getter = `${player}Character`;
@@ -23,6 +24,9 @@ const clearMessage = function (user) {
   let id = `${user}Dialogue`;
   console.log(id);
   let containerBlock = document.getElementById(id);
-  console.log(containerBlock.innerText);
-  containerBlock.innerText = '';
+  containerBlock.innerHTML = '';
 };
+
+const randomInterval = function () {
+  return Math.floor(Math.random() * 1000);
+}
