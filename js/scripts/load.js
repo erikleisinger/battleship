@@ -158,21 +158,6 @@ const createGrid = function () {
 createGrid();
 
 const setButtons = function () {
-  let targButton = document.getElementsByClassName('target')[0];
-  targButton.addEventListener('click', function () {
-    gameData.state = 'target';
-    console.log(gameData);
-  });
-  let voidButton = document.getElementsByClassName('void')[0];
-  voidButton.addEventListener('click', function () {
-    gameData.state = 'void';
-    console.log(gameData);
-  });
-  let triedButton = document.getElementsByClassName('tried')[0];
-  triedButton.addEventListener('click', function () {
-    gameData.state = 'tried';
-    console.log(gameData);
-  });
   let carrierButton = document.getElementsByClassName('carrier')[0];
   carrierButton.addEventListener('click', function () {
     gameData.checkFor = 'carrier';
