@@ -89,11 +89,6 @@ const characterSelectButtons = function () {
 };
 characterSelectButtons();
 
-let pic = document.getElementsByClassName('character')[0];
-pic.addEventListener('click', function() {
-  let character = classes[gameData.opponentCharacter];
-  console.log(character.getPhrase('hit'));
-});
 
 const generateGameTiles = function () {
   for (let x = 0; x < 200; x++) {

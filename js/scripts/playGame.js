@@ -1,4 +1,4 @@
-const userTurn = function (tile, player) {
+const gameTurn = function (tile, player) {
   console.log(gameTiles);
   fireAtTile(tile, player);
 };

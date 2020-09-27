@@ -6,27 +6,7 @@ const checkTile = function (tile, player) {
   }
 };
 
-const changeTileAsset = function (tile) {
-  let tileRole = gameTiles[tile].role;
-  if (tileRole === 'target') {
-  }
-  let color = gameAssets.colors[tileRole];
-  let changeTile = document.getElementById(tile);
-  changeTile.style.backgroundColor = color;
 
-}
-
-const fireAtTile = function (tile, player) {
-  if (checkTile(tile) === true) {
-    changeTileAsset(tile);
-    sendMessage(player, 'hit');
-
-  } else {
-    gameTiles[tile].role = 'tried';
-    changeTileAsset(tile);
-    sendMessage(player, 'tried');
-  }
-};
 
 function getInputValue() {
   // Selecting the input element and get its value 
@@ -80,26 +60,7 @@ const boatPlacement = function (id) {
 };
 
 
-const sendMessage = function (player, event) {
-  clearMessage(player);
 
-  let getter = `${player}Character`;
-  console.log(getter);
-  let userClass = gameData[getter];
-  console.log(userClass);
-  let classClass = classes[userClass];
-  console.log(classClass);
-  let blockGetter = `${player}Dialogue`;
-  let containerBlock = document.getElementById(blockGetter);
-  if (event === 'shipPlace') {
-    let currentShip = gameData.lastShip;
-    containerBlock.innerHTML = classClass.shipPlace(currentShip);
-
-    console.log(`heres the dialogue: ${classClass.shipPlace(currentShip)}`);
-  } else {
-    containerBlock.innerHTML = classClass.getPhrase(event);
-  }
-}
 
 const sendPlayerGreeting = function () {
   let containerBlock = document.getElementById('playerDialogue');
@@ -119,25 +80,8 @@ const sendOpponentGreeting = function () {
 
 
 }
-const clearMessage = function (user) {
-  let id = `${user}Dialogue`;
-  console.log(id);
-  let containerBlock = document.getElementById(id);
-  console.log(containerBlock.innerText);
-  containerBlock.innerText = '';
-};
 
 
-const move = function (id) {
-
-  if (gameData.gameMode === 'place') {
-    boatPlacement(id);
-    clearMessage('player');
-    sendMessage('player', 'shipPlace')
-  } else if (gameData.gameMode === 'play') {
-    userTurn(id);
-  }
-};
 
 const shipPlacementButton = function (cla) {
   console.log('hi there');
