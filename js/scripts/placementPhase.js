@@ -1,3 +1,4 @@
+
 const loadPlacement = function () {
   setTimeout(() => {
     sendPlayerGreeting();
@@ -12,9 +13,24 @@ const loadPlacement = function () {
     clearMessage('opponent');
   }, 6000);
   setTimeout(() => {
-    sendMessage('place', 'player');
+    sendMessage('player', 'place');
   }, 8000);
+  
 };
+
+
+window.setInterval(() => {
+  sendMessage('player', 'resting')
+  setTimeout(() => {
+    clearMessage('player');
+  }, 8000)
+}, getRandomInterval());
+window.setInterval(() => {
+  sendMessage('opponent', 'resting')
+    setTimeout(() => {
+      clearMessage('opponent');
+    }, 8000)
+}, getRandomInterval());
 
 const placementTurn = function(player, id) {
     boatPlacement(id);

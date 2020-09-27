@@ -1,5 +1,5 @@
 const addClasses = function () {
-  classes.grawl = grawl;
+  classes.andrea = andrea;
   classes.virginia = virginia;
   classes.sadhguru = sadhguru;
   classes.kamala = kamala;
@@ -27,7 +27,7 @@ const pickRandomOpponent = function () {
   let num = Math.floor(Math.random() * 5);
   console.log(num);
     if (num === 0) {
-      gameData.opponentCharacter = 'grawl';
+      gameData.opponentCharacter = 'andrea';
     }
     if (num === 1) {
       gameData.opponentCharacter = 'kamala';
@@ -89,9 +89,9 @@ const characterSelectButtons = function () {
     chooseCharacter('sadhguru');
     
   });
-  let grawl = document.getElementById('grawlSelect');
-  grawl.addEventListener('click', () => {
-    chooseCharacter('grawl');
+  let andrea = document.getElementById('andreaSelect');
+  andrea.addEventListener('click', () => {
+    chooseCharacter('andrea');
     
   });
   let kamala = document.getElementById('kamalaSelect');

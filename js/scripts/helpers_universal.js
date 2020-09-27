@@ -1,6 +1,11 @@
+const getRandomInterval = function() {
+  let randomInterval = Math.round(Math.random() * 20);
+  return randomInterval * 2000;
+}
+
 const sendMessage = function (player, event) {
 
-  clearMessage(player);
+  
 
   let getter = `${player}Character`;
   console.log(getter);
@@ -27,6 +32,5 @@ const clearMessage = function (user) {
   containerBlock.innerHTML = '';
 };
 
-const randomInterval = function () {
-  return Math.floor(Math.random() * 1000);
-}
+  
+

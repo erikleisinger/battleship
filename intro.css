@@ -85,8 +85,8 @@
 #virginiaName {
   background-color: rgba(255, 253, 139, 0.637);
 }
-#grawlName {
-  background-color: rgba(39, 139, 0, 0.637);
+#andreaName {
+  background-color: rgba(255, 78, 78, 0.9);
 }
 #sadhguruName {
   background-color: rgba(255, 94, 255, 0.637);
@@ -95,13 +95,13 @@
   background-color: rgba(94, 118, 255, 0.637);
 }
 #coreyName {
-  background-color: rgba(255, 78, 78, 0.637);
+  background-color: rgba(147, 255, 153, 0.9);
 }
 #virginiaDesc {
   background-color: rgba(255, 253, 139, 0.9);
 }
-#grawlDesc {
-  background-color: rgba(39, 139, 0, 0.9);
+#andreaDesc {
+  background-color: rgba(255, 78, 78, 0.9);
 }
 #sadhguruDesc {
   background-color: rgba(255, 94, 255, 0.9);
@@ -110,7 +110,7 @@
   background-color: rgba(94, 118, 255, 0.9);
 }
 #coreyDesc {
-  background-color: rgba(255, 78, 78, 0.9);
+  background-color: rgba(147, 255, 153, 0.9);
 }
 .charDesc {
   display: none;

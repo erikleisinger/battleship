@@ -216,17 +216,7 @@ const playGameBoard = function () {
     // let tile = document.getElementById(item);
     // tile.style.backgroundColor = color;
   }
-  let num = Math.floor(Math.random() * 4);
-  console.log(num);
-    if (num === 0) {
-      gameData.opponentCharacter = classes.grawl;
-    }
-    if (num === 1) {
-      gameData.opponentCharacter = classes.kamala;
-    }
-    if (num === 2) {
-      gameData.opponentCharacter = classes.virginia;
-    }
+  
 };
 
 

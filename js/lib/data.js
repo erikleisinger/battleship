@@ -63,7 +63,7 @@ const gameData = {
   },
   playerName: '',
   playerCharacter: 'virginia',
-  opponentCharacter: 'grawl',
+  opponentCharacter: 'andrea',
 };
 
 
