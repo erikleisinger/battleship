@@ -65,16 +65,17 @@
   align-items: center;
   justify-content: center;
 }
-.character {
+.characterPick {
   height: 90%;
   width: 19%;
   min-width: 0%;
   border: 2px solid black;
   transition: border-color, transform, 0.3s;
   display: flex;
-  background-color: red;
+  background-color: none;
+  align-items: flex-end;
 }
-.character:hover {
+.characterPick:hover {
  border-color: yellow;
  transform: scale(1.1);
  width: 100%;
@@ -83,7 +84,7 @@
 }
 .nameWrapper {
   height: 20%;
-  width: 50%;
+  min-width: 100%;
   margin-bottom: auto;
   bottom: 0;
   left: 0;
@@ -94,32 +95,50 @@
   font-family: sans-serif;
   word-break: normal;
 }
-.name {
-  max-width: 16vw;
-  
+
+.charLeft {
+  width: 50%;
+  height: 100%;
+  flex: 1;
 }
-#virginia {
+#virginiaName {
   background-color: rgba(255, 253, 139, 0.637);
 }
-#grawl {
+#grawlName {
   background-color: rgba(39, 139, 0, 0.637);
 }
-#sadhguru {
+#sadhguruName {
   background-color: rgba(255, 94, 255, 0.637);
 }
-#kamala {
+#kamalaName {
   background-color: rgba(94, 118, 255, 0.637);
 }
-#corey {
+#coreyName {
   background-color: rgba(255, 78, 78, 0.637);
+}
+#virginiaDesc {
+  background-color: rgba(255, 253, 139, 0.9);
+}
+#grawlDesc {
+  background-color: rgba(39, 139, 0, 0.9);
+}
+#sadhguruDesc {
+  background-color: rgba(255, 94, 255, 0.9);
+}
+#kamalaDesc {
+  background-color: rgba(94, 118, 255, 0.9);
+}
+#coreyDesc {
+  background-color: rgba(255, 78, 78, 0.9);
 }
 .charDesc {
   display: none;
   height: 100%;
   width: 50%;
-  background-color: yellow;
+  background-color: white;
   max-width: 60%;
   min-width: 0%;
   overflow: hidden;
+  
 }
 
