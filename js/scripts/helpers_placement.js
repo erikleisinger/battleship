@@ -178,10 +178,10 @@ let currentArray = '';
 
 const highlightTiles = function (array) {
   currentArray = array;
-  let color = gameAssets.colors[gameData.checkFor];
+  let color = 'js/lib/images/game_assets/ship_01.png';
   for (let item of array) {
     let tileToHighlight = document.getElementById(item);
-    tileToHighlight.style.backgroundColor = color;
+    tileToHighlight.style.backgroundImage = `url(${color})`;
   }
   return array;
 };
@@ -196,7 +196,7 @@ const highlightNoMore = function () {
     if (gameTiles[item].role === 'target') {
     } else {
       let tileToHighlight = document.getElementById(item);
-      tileToHighlight.style.backgroundColor = 'white';
+      tileToHighlight.style.backgroundImage = 'url("js/lib/images/game_assets/tile_water.png")';
     }
 
   }
