@@ -49,9 +49,9 @@ body {
   padding: 0;
  background-image: url('js/lib/images/game_assets/tile_water.png');
  background-size: 100% 100%;
-  border: 2px solid rgba(0,0,0,0);
-  height: 9%;
-  width: 9%;
+  /* border: 2px solid rgba(0,0,0,0); */
+  height: 10%;
+  width: 10%;
   flex: 1 0 auto;
 }
 .board:hover {

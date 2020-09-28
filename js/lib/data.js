@@ -34,11 +34,66 @@ const gameAssets = {
     target: 'red',
     void: 'white',
     tried: 'black',
-    carrier: 'red',
-    battleship: 'orange',
-    cruiser: 'yellow',
-    submarine: 'green',
-    destroyer: 'blue'
+    carrier: {
+      horz: {
+        fore: `url('js/lib/images/game_assets/carrier_fore_horz.png')`,
+        mid: `url('js/lib/images/game_assets/carrier_horz.png')`,
+        rear: `url('js/lib/images/game_assets/carrier_rear_horz.png')`,
+      },
+      vert: {
+        fore: `url('js/lib/images/game_assets/carrier_fore_vert.png')`,
+        mid:`url('js/lib/images/game_assets/carrier_vert.png')`,
+        rear: `url('js/lib/images/game_assets/carrier_rear_vert.png')`,
+      },
+    },
+    battleship: {
+      horz: {
+        fore: `url('js/lib/images/game_assets/battleship_fore_horz.png')`,
+        mid: `url('js/lib/images/game_assets/battleship_horz.png')`,
+        rear: `url('js/lib/images/game_assets/battleship_rear_horz.png')`,
+      },
+      vert: {
+        fore: `url('js/lib/images/game_assets/battleship_fore_vert.png')`,
+        mid:`url('js/lib/images/game_assets/battleship_vert.png')`,
+        rear: `url('js/lib/images/game_assets/battleship_rear_vert.png')`,
+      },
+    },
+    cruiser: {
+      horz: {
+        fore: `url('js/lib/images/game_assets/cruiser_fore_horz.png')`,
+        mid: `url('js/lib/images/game_assets/cruiser_horz.png')`,
+        rear: `url('js/lib/images/game_assets/cruiser_rear_horz.png')`,
+      },
+      vert: {
+        fore: `url('js/lib/images/game_assets/cruiser_fore_vert.png')`,
+        mid:`url('js/lib/images/game_assets/cruiser_vert.png')`,
+        rear: `url('js/lib/images/game_assets/cruiser_rear_vert.png')`,
+      },
+    },
+    submarine: {
+      horz: {
+        fore: `url('js/lib/images/game_assets/submarine_fore_horz.png')`,
+        mid: `url('js/lib/images/game_assets/submarine_horz.png')`,
+        rear: `url('js/lib/images/game_assets/submarine_rear_horz.png')`,
+      },
+      vert: {
+        fore: `url('js/lib/images/game_assets/submarine_fore_vert.png')`,
+        mid:`url('js/lib/images/game_assets/submarine_vert.png')`,
+        rear: `url('js/lib/images/game_assets/submarine_rear_vert.png')`,
+      },
+    },
+    destroyer: {
+      horz: {
+        fore: `url('js/lib/images/game_assets/destroyer_fore_horz.png')`,
+        mid: `url('js/lib/images/game_assets/destroyer_horz.png')`,
+        rear: `url('js/lib/images/game_assets/destroyer_rear_horz.png')`,
+      },
+      vert: {
+        fore: `url('js/lib/images/game_assets/destroyer_fore_vert.png')`,
+        mid:`url('js/lib/images/game_assets/destroyer_vert.png')`,
+        rear: `url('js/lib/images/game_assets/destroyer_rear_vert.png')`,
+      },
+    },
   },
   shipData: {
     carrier: 5,
